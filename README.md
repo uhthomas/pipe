@@ -19,7 +19,7 @@ func main() {
   p := pipe.New(10)
 
   for i := 0; i < 100; i++ {
-    go worker(i) 
+    go worker(p, i) 
   }
 
   select{}
@@ -35,7 +35,7 @@ func worker(p pipe.Pipe, i int) {
 ```
 
 ## Why would I use this?
-Pipe is designed to help ease the pain of limiting the amount of work done at one time. A normal way to approach this would be to create a work pool such as
+Pipe is designed to help ease the pain of limiting the amount of work done at one time. A normal way to approach this would be to create a worker pool such as
 ```go
 package main
 
