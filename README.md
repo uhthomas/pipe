@@ -102,7 +102,7 @@ func worker(p pipe.Pipe, v interface{}) {
 ```
 
 ### Payload and worker options
-Some people may want to have a large buffer for the amount of work they want in a pipe while still only having maybe 10 workers actually doing that work. A simple solution for this would be to make a channel in which work is sent to and a routing which sends the work from that channel to the worker.
+Some people may want to have a large buffer for the amount of work they want in a pipe while still only having maybe 10 workers actually doing that work. A simple solution for this would be to make a channel in which work is sent to and a router which sends the work from that channel to the worker.
 ```go
 func main() {
     ch := make(chan interface{}, 200)
