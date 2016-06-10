@@ -88,7 +88,7 @@ In Marcio's example the job queue would only block until the work is received, o
 func main() {
     p := pipe.New(10)
     for i := 0; i < 180; i++ {
-        go worker(p, i)
+        worker(p, i)
     }
 }
 
